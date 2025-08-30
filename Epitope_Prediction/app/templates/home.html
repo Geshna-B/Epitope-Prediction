@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Epitope Prediction</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom right, #f5fafd, #ffffff);
+      min-height: 100vh;
+    }
+
+    .navbar {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-link.active {
+      font-weight: 600;
+      color: #fff !important;
+    }
+
+    .hero-section {
+      text-align: center;
+      padding: 80px 20px 50px;
+      background: linear-gradient(to right, #3f87a6, #ebf8e1, #f69d3c);
+      color: #fff;
+    }
+
+    .hero-section h1 {
+      font-weight: 600;
+      font-size: 2.7rem;
+    }
+
+    .hero-section p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 20px auto 0;
+    }
+
+    .upload-container {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+      margin-top: -30px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .btn-primary {
+      background-color: #0d6efd;
+      border: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+
+    .btn-primary:hover {
+      background-color: #084ccf;
+    }
+
+    label {
+      font-weight: 500;
+    }
+
+    .form-select:focus, .form-control:focus {
+      box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    }
+
+    .form-icon {
+      width: 64px;
+      margin-bottom: 20px;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px 10px;
+      color: #6c757d;
+      font-size: 0.95rem;
+      background-color: #f8f9fa;
+      margin-top: 60px;
+    }
+
+    .upload-container:hover {
+      transform: translateY(-2px);
+      transition: transform 0.3s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">🧬 Epitope Predictor</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/predict">Predict</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <h1>AI-Powered Epitope Prediction</h1>
+      <p>Upload your peptide dataset and select from top-performing ML models to predict immune-activating epitopes for vaccine development.</p>
+    </div>
+  </section>
+
+  <!-- Upload Form Section -->
+  <div class="container upload-container mt-5">
+    <div class="text-center">
+      <img src="https://img.icons8.com/ios-filled/100/000000/dna-helix.png" class="form-icon" alt="DNA Icon">
+      <h3 class="mb-4">Upload Your CSV File</h3>
+    </div>
+
+    <form method="POST" action="/predict" enctype="multipart/form-data">
+      <div class="mb-4">
+        <label for="file" class="form-label">Choose CSV File</label>
+        <input class="form-control" type="file" id="file" name="file" required>
+      </div>
+
+      <div class="mb-4">
+        <label for="model" class="form-label">Select Prediction Model</label>
+        <select class="form-select" id="model" name="model" required>
+          <option selected disabled>-- Choose Model --</option>
+          <option value="RandomForest">Random Forest</option>
+          <option value="GaussianNB">Gaussian Naive Bayes</option>
+          <option value="LightGBM">LightGBM</option>
+          <option value="CatBoost">CatBoost</option>
+          <option value="XGBoost">XGBoost</option>
+          <option value="FNN">Feedforward Neural Network</option>
+          <option value="LSTM">LSTM</option>
+        </select>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary px-5 py-2">🔍 Predict</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    © 2025 Epitope Predictor | Built with ❤️ for Biomedical Innovation
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
