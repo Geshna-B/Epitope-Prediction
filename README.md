@@ -58,13 +58,20 @@ A **web-based interface** enables users to upload sequences, run predictions, an
 ## Project Structure
 
 Epitope-Prediction/
-├── data/                # input datasets (bcell, sars, covid)
-├── src/                 # source code (ML/DL models, feature extraction)
-├── notebooks/           # Jupyter notebooks for EDA and experiments
-├── models/              # trained model files
-├── webapp/              # web-based interface code
-├── requirements.txt     # dependencies
-└── README.md            # project documentation
+
+├── data/                # input datasets (bcell, sars, covid).
+
+├── src/                 # source code (ML/DL models, feature extraction).
+
+├── notebooks/           # Jupyter notebooks for EDA and experiments.
+
+├── models/              # trained model files.
+
+├── webapp/              # web-based interface code.
+
+├── requirements.txt     # dependencies.
+
+└── README.md            # project documentation.
 
 ## Installation
 
@@ -100,8 +107,3 @@ This project is licensed under the **MIT License** – see the [LICENSE](LICENSE
 Supervisors: **Dr. Vinith R & Dr. Manoj Bhat**
 Department of Artificial Intelligence, Amrita Vishwa Vidyapeetham
 
-
-✨ This `README.md` is detailed but clean, highlighting **your ML/DL models, datasets, results, and future scope** – exactly what recruiters, professors, or GitHub visitors look for.  
-
-Do you also want me to prepare the **MIT `LICENSE` file** with your team’s names & year 2025 so you can directly drop it into your repo?
-```
